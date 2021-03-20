@@ -23,8 +23,9 @@ if [ $# -eq 2 ];then
   # コンパイル
   g++ -Wall -std=c++14 ./${questionNumber}.cpp
   echo "---------------入力内容-----------------"
-  ./${questionNumber}.out
+  ./a.out
   echo "----------------------------------------"
+  rm -f a.out
   exit
 fi
 
@@ -34,7 +35,7 @@ fi
 URL="https://atcoder.jp/contests/${contestLevel}${contestNumber}/tasks/${contestLevel}${contestNumber}_${questionNumber}"
 
 # サンプルデータダウンロード
-oj login "${URL}"
+# oj login "${URL}"
 oj dl "${URL}"
 
 
@@ -59,5 +60,5 @@ echo ""
 oj test
 
 # 新しくできたファイルを削除
-rm -f a.out
+rm -f ${questionNumber}.out
 rm -rf test

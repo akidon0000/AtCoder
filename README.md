@@ -15,6 +15,10 @@ sh coppy.sh abc 190
 % cd /Users/akidon/program/atcoder/ ; sh coppy.sh abc
 
 # 実行
+
+<!-- コンテスト時 ログインする必要あり-->
+% oj login https://atcoder.jp/
+
 <!-- 実行ファイルに移動 -->
 % cd /Users/akidon/program/atcoder/
 <!--
