@@ -23,9 +23,16 @@ vector<int> datas(100);
 
 int main()
 {
-  cin >> a >> b >> c;
-  cin >> m >> n;
-  rep(i, 0, m) cin >> datas[i];
-
+  // str = "";
+  cin >> a >> b;
+  rep(i, 0, a) {
+  cin >> c;
+    if (c!=b){
+      ok = true;
+      cout << c << " ";
+    }
+  }
+  // p(str)
+  if (ok) { p("") }
   return 0;
 }
