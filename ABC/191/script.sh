@@ -1,9 +1,6 @@
-# !/bin/sh
+# !/bin/zsh
 # 第一引数 問題番号
-
-alias g++='g++-10'
-#権限付与
-# chmod +x script.sh
+#  cd abc/190
 
 # 現在のパスを取得
 path=$(cd $(dirname $0); pwd)
