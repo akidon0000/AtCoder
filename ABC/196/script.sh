@@ -60,5 +60,5 @@ echo ""
 oj test
 
 # 新しくできたファイルを削除
-rm -f ${questionNumber}.out
+rm -f a.out
 rm -rf test

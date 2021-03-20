@@ -1,4 +1,4 @@
-# !/bin/zsh
+# !/bin/sh
 # 第一引数 問題番号
 #  cd abc/190
 
@@ -23,8 +23,9 @@ if [ $# -eq 2 ];then
   # コンパイル
   g++ -Wall -std=c++14 ./${questionNumber}.cpp
   echo "---------------入力内容-----------------"
-  ./${questionNumber}.out
+  ./a.out
   echo "----------------------------------------"
+  rm -f a.out
   exit
 fi
 
@@ -34,6 +35,7 @@ fi
 URL="https://atcoder.jp/contests/${contestLevel}${contestNumber}/tasks/${contestLevel}${contestNumber}_${questionNumber}"
 
 # サンプルデータダウンロード
+# oj login "${URL}"
 oj dl "${URL}"
 
 
