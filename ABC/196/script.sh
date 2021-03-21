@@ -1,4 +1,4 @@
-# !/bin/zsh
+# !/bin/sh
 # 第一引数 問題番号
 #  cd abc/190
 
