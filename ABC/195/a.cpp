@@ -18,8 +18,9 @@ vector<int> datas(100);
 
 int main(){
 
-  cin >> a >> b >> c >> d;
-  rep(i, m) cin >> datas[i];
+  cin >> a >> b ;
 
+  num = b % a;
+  yn(num == 0,"Yes","No")
   return 0;
 }

@@ -18,8 +18,15 @@ vector<int> datas(100);
 
 int main(){
 
-  cin >> a >> b >> c >> d;
-  rep(i, m) cin >> datas[i];
+  cin >> a >> b >> c ;
+  c = c * 1000;
+  d = (c + b - 1) / b;
+  e = c / a;
 
+  if(d>e){
+    p("UNSATISFIABLE");
+  }else{
+    cout << d << " " << e << endl;
+  }
   return 0;
 }

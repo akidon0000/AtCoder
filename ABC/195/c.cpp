@@ -18,8 +18,14 @@ vector<int> datas(100);
 
 int main(){
 
-  cin >> a >> b >> c >> d;
-  rep(i, m) cin >> datas[i];
+  cin >> la;
+  lb = 1000;
+
+  while(la>=lb){
+    lans += la - lb + 1;
+    lb *= 1000;
+  }
+  p(lans)
 
   return 0;
 }
