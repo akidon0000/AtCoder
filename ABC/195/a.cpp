@@ -19,8 +19,7 @@ vector<int> datas(100);
 int main(){
 
   cin >> a >> b >> c >> d;
-  ans = b - c;
-  p(ans)
+  rep(i, m) cin >> datas[i];
 
   return 0;
 }

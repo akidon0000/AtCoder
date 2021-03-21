@@ -16,10 +16,19 @@ string str, str1, str2, str3;
 bool ok = false;
 vector<int> datas(100);
 
+ll ff(ll lb) {
+  str1 = to_string(lb);
+  return stoll(str1 + str1);
+}
+
 int main(){
 
-  cin >> a >> b >> c >> d;
-  rep(i, m) cin >> datas[i];
+  cin >> la;
+  lb = 1;
+  while (ff(lb) <= la)++lb;
+
+  lc = lb - 1;
+  p(lc)
 
   return 0;
 }

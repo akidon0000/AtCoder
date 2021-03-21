@@ -18,8 +18,12 @@ vector<int> datas(100);
 
 int main(){
 
-  cin >> a >> b >> c >> d;
-  rep(i, m) cin >> datas[i];
+  cin >> str;
 
+  for (char x : str){
+    if (x=='.') break;
+    str1 += x;
+  }
+  p(str1)
   return 0;
 }
