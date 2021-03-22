@@ -14,18 +14,19 @@ int a, b, c, d, e, f, g, i, j, m, n, ans = 0, counter = 0, num = 0;
 long long la, lb, lc, ld, lans = 0, lcounter = 0, lnum = 0;
 string str, str1, str2, str3;
 bool ok = false;
-vector<int> datas(100);
+
 
 int main(){
 
-  cin >> la;
-  lb = 1000;
+  cin >> a ;
+  vector<int> datas(a);
+  rep(i, a) cin >> datas[i];
 
-  while(la>=lb){
-    lans += la - lb + 1;
-    lb *= 1000;
+  rep(i,a){
+    rep1( j,i+1,a){
+      lans += pow((datas[i] - datas[j]), 2);
+    }
   }
-  p(lans)
-
+p(lans)
   return 0;
 }

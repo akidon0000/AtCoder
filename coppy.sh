@@ -1,4 +1,4 @@
-# !/bin/zsh
+# !/bin/sh
 # 第一引数 コンテストレベル
 # 第二引数 コンテスト番号
 # cd /Users/akidon/program/atcoder

@@ -10,22 +10,24 @@ using ll = long long;
 #define p(x) cout << x << endl;
 #define f(x) for (int i = 0; i < x.size(); i++) cout << #x << "[" << i << "]; " << x[i] << endl;
 
-int a, b, c, d, e, f, g, i, j, m, n, ans = 0, counter = 0, num = 0;
-long long la, lb, lc, ld, lans = 0, lcounter = 0, lnum = 0;
+int now = 0, ans = 0, counter = 0, num = 0;
+long long lnow = 0, lans = 0, lcounter = 0, lnum = 0;
 string str, str1, str2, str3;
 bool ok = false;
-vector<int> datas(100);
 
 int main(){
 
-  cin >> la;
-  lb = 1000;
+  int n;
+  cin >> n ;
 
-  while(la>=lb){
-    lans += la - lb + 1;
-    lb *= 1000;
+  vector<int>a(n),b(n);
+  rep(i,n) cin >> a[i] >> b[i];
+  ans = 1001001001;
+  rep(ai,n) rep(bi,n){
+    if(ai==bi) now=a[ai]+b[bi];
+    else now=max(a[ai],b[bi]);
+    ans=min(ans,now);
   }
-  p(lans)
-
+  p(ans)
   return 0;
 }

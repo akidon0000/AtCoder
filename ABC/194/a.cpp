@@ -18,14 +18,20 @@ vector<int> datas(100);
 
 int main(){
 
-  cin >> la;
-  lb = 1000;
+  cin >> a >> b ;
+  c = a + b;
 
-  while(la>=lb){
-    lans += la - lb + 1;
-    lb *= 1000;
+  if (15 <= c && 8<=b){
+    p(1)
+  }else if (10 <= c && 3<=b){
+    p(2)
+  }else if (3 <= c){
+    p(3)
+  }else{
+    p(4)
   }
-  p(lans)
+
+
 
   return 0;
 }
