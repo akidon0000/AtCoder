@@ -19,8 +19,11 @@ vector<int> datas(100);
 
 int main(){
 
-  cin >> n;
-
+  double A,B;
+  cin >> A >> B;
+  double  a;
+  a=1-(B/A);
+  p(a*100)
 
   return 0;
 }

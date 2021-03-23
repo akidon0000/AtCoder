@@ -10,7 +10,7 @@ using ll = long long;
 #define p(x) cout << x << endl;
 #define f(x) for (int i = 0; i < x.size(); i++) cout << #x << "[" << i << "]; " << x[i] << endl;
 
-int n, ans = 0, counter = 0, num = 0;
+int  ans = 0, counter = 0, num = 0;
 long long lans = 0, lcounter = 0, lnum = 0;
 string str, str1, str2, str3;
 bool ok = false;
@@ -18,9 +18,17 @@ vector<int> datas(100);
 // rep(i, m) cin >> datas[i];
 
 int main(){
-
+  ll n;
   cin >> n;
+  set<ll> s;
 
-
+  for (ll a =2; a*a <=n; ++a){
+    ll x = a*a;
+    while(x<=n){
+      s.insert(x);
+      x *= a;
+    }
+  }
+  p(n-s.size())
   return 0;
 }

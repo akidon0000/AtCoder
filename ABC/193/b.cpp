@@ -12,14 +12,30 @@ using ll = long long;
 
 int n, ans = 0, counter = 0, num = 0;
 long long lans = 0, lcounter = 0, lnum = 0;
+const long long INF = 1LL << 60;
 string str, str1, str2, str3;
 bool ok = false;
-vector<int> datas(100);
+vector<int> A(100100),P(100100),X(100100);
 // rep(i, m) cin >> datas[i];
 
 int main(){
-
+  lans = INF;
   cin >> n;
+  ll a,b,c,d;
+  rep(i,n){
+    cin >> a >> b >> c;
+    d=c-a;
+    if (d>0){
+      lans=min(lans,b);
+    }
+  }
+  if (lans == INF){
+    p(-1)
+  }else{
+    p(lans)
+  }
+
+
 
 
   return 0;
