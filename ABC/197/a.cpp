@@ -36,13 +36,26 @@ using ll = long long;
 int n, ans = 0, counter = 0, num = 0;
 long long lans = 0, lcounter = 0, lnum = 0;
 string str, str1, str2, str3;
-bool ok = false;
+bool ok = true;
 vector<int> datas(100);
 // rep(i, m) cin >> datas[i];
 
 int main(){
+  str2 = "";
+  cin >> str;
+  for (char s:str){
+    if (ok){
+      str3 = s;
+      ok = false;
+    }else{
+      str2 += s;
+    }
 
-  cin >> n;
+  }
+  str2 += str3;
+
+  p(str2)
+
 
 
   return 0;
