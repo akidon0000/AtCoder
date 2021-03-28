@@ -2,7 +2,7 @@
 # 第一引数 問題番号
 #  cd abc/190
 
-#alias g++='g++-10'
+# alias g++='g++-10'
 
 # 現在のパスを取得
 path=$(cd $(dirname $0); pwd)

@@ -22,7 +22,6 @@
 #include <tuple>
 #include <utility>
 #include <vector>
-// #include <boost/range/irange.hpp>
 using namespace std;
 using ll = long long;
 #define _GLIBCXX_DEBUG
@@ -34,17 +33,30 @@ using ll = long long;
 #define p(x) cout << x << endl;
 #define f(x) for (int i = 0; i < x.size(); i++) cout << #x << "[" << i << "]; " << x[i] << endl;
 
-int a, b, c, d, e, f, g, i, j, m, n, ans = 0, counter = 0, num = 0;
-long long la, lb, lc, ld, lans = 0, lcounter = 0, lnum = 0;
+int n, ans = 0, counter = 0, num = 0;
+long long lans = 0, lcounter = 0, lnum = 0;
 string str, str1, str2, str3;
-bool ok = false;
+bool ok = true;
 vector<int> datas(100);
+// rep(i, m) cin >> datas[i];
 
 int main(){
+  str2 = "";
+  cin >> str;
+  for (char s:str){
+    if (ok){
+      str3 = s;
+      ok = false;
+    }else{
+      str2 += s;
+    }
 
-  cin >> a >> b >> c >> d;
-  ans = b - c;
-  p(ans)
+  }
+  str2 += str3;
+
+  p(str2)
+
+
 
   return 0;
 }

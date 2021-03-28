@@ -22,7 +22,6 @@
 #include <tuple>
 #include <utility>
 #include <vector>
-// #include <boost/range/irange.hpp>
 using namespace std;
 using ll = long long;
 #define _GLIBCXX_DEBUG
@@ -34,17 +33,61 @@ using ll = long long;
 #define p(x) cout << x << endl;
 #define f(x) for (int i = 0; i < x.size(); i++) cout << #x << "[" << i << "]; " << x[i] << endl;
 
-int a, b, c, d, e, f, g, i, j, m, n, ans = 0, counter = 0, num = 0;
-long long la, lb, lc, ld, lans = 0, lcounter = 0, lnum = 0;
+int n, ans = 0, counter = 0, num = 0;
+long long lans = 0, lcounter = 0, lnum = 0;
 string str, str1, str2, str3;
 bool ok = false;
-vector<int> datas(100);
+// vector<string> datas(10001);
+// rep(i, m) cin >> datas[i];
 
 int main(){
+  int H,W,X,Y,mx;
+  cin >> H >> W >> Y >> X;
+  str ="";
+  rep(i,H){
+    cin >> str;
+    str2 += str;
+  }
+  // datas[i];
 
-  cin >> a >> b >> c >> d;
-  ans = b - c;
-  p(ans)
+  num = ((W*(Y-1))+X)-1;
+  mx = (W*H)-1;
+  int up,left,right,down;
+  up = num - W;
+  left = num - 1;
+  right = num + 1;
+  down = num + W;
+  // d(num)
+  // d(up)
+  // d(left)
+  // d(right)
+  // d(down)
+  counter = num;
+
+  while (up>=0 && str2[up]=='.'){
+    ans++;
+    up -= W;
+  }
+
+  while (counter % W != 0 && str2[left]=='.'){
+    ans++;
+    counter -= 1;
+    left -= 1;
+  }
+  counter = num+1;
+  while ((counter) % W != 0 && str2[right]=='.'){
+    ans++;
+    counter += 1;
+    right += 1;
+
+  }
+  while (down <= mx && str2[down]=='.'){
+    ans++;
+    down += W;
+  }
+
+  p(ans+1)
+
 
   return 0;
 }
