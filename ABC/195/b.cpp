@@ -21,7 +21,7 @@ int main(){
   cin >> a >> b >> c ;
   c = c * 1000;
   d = (c + b - 1) / b;
-  e = c / a;
+  e = c / a; 
 
   if(d>e){
     p("UNSATISFIABLE");

@@ -10,16 +10,21 @@ using ll = long long;
 #define p(x) cout << x << endl;
 #define f(x) for (int i = 0; i < x.size(); i++) cout << #x << "[" << i << "]; " << x[i] << endl;
 
-int a, b, c, d, e, f, g, i, j, m, n, ans = 0, counter = 0, num = 0;
-long long la, lb, lc, ld, lans = 0, lcounter = 0, lnum = 0;
+int n, ans = 0, counter = 0, num = 0;
+long long lans = 0, lcounter = 0, lnum = 0;
 string str, str1, str2, str3;
-bool ok = false;
+bool ok = true;
 vector<int> datas(100);
+// rep(i, m) cin >> datas[i];
 
 int main(){
-
-  cin >> a >> b >> c >> d;
-  rep(i, m) cin >> datas[i];
-
-  return 0;
+  string s; cin>>s;
+  bool flag=true;
+  for (int i = 0; i < int(s.size()); i++)
+  {
+      if (i%2==0) {if (s[i]<=90) {flag=false; break;}}
+      else if (s[i]>=97) {flag=false; break;}
+  }
+  if (flag) cout<<"Yes"<<endl;
+  else cout<<"No"<<endl;
 }

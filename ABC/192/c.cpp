@@ -10,16 +10,27 @@ using ll = long long;
 #define p(x) cout << x << endl;
 #define f(x) for (int i = 0; i < x.size(); i++) cout << #x << "[" << i << "]; " << x[i] << endl;
 
-int a, b, c, d, e, f, g, i, j, m, n, ans = 0, counter = 0, num = 0;
-long long la, lb, lc, ld, lans = 0, lcounter = 0, lnum = 0;
+int n, ans = 0, counter = 0, num = 0;
+long long lans = 0, lcounter = 0, lnum = 0;
 string str, str1, str2, str3;
 bool ok = false;
 vector<int> datas(100);
+// rep(i, m) cin >> datas[i];
 
 int main(){
+  int n, k;
+  cin >> n >> k;
 
-  cin >> a >> b >> c >> d;
-  rep(i, m) cin >> datas[i];
+	while(k--) {
+		string s = to_string(n);
+		sort(begin(s), end(s), greater<>());
+		int X = stoi(s);
+		reverse(begin(s), end(s));
+		int Y = stoi(s);
+
+		n = X - Y;
+	}
+	p(n);
 
   return 0;
 }
