@@ -1,27 +1,4 @@
-// #include <bits/stdc++.h>
-#include <cassert>
-#include <cctype>
-#include <cmath>
-#include <cstdio>
-#include <cstdlib>
-#include <algorithm>
-#include <bitset>
-#include <deque>
-#include <functional>
-#include <iostream>
-#include <iomanip>
-#include <limits>
-#include <list>
-#include <map>
-#include <numeric>
-#include <queue>
-#include <set>
-#include <sstream>
-#include <stack>
-#include <string>
-#include <tuple>
-#include <utility>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
 #define _GLIBCXX_DEBUG
@@ -33,7 +10,7 @@ using ll = long long;
 #define p(x) cout << x << endl;
 #define f(x) for (int i = 0; i < x.size(); i++) cout << #x << "[" << i << "]; " << x[i] << endl;
 
-int n, ans = 0, counter = 0, num = 0;
+int n,x,counter = 0;
 long long lans = 0, lcounter = 0, lnum = 0;
 string str, str1, str2, str3;
 bool ok = false;
@@ -41,12 +18,16 @@ vector<int> datas(100);
 // rep(i, m) cin >> datas[i];
 
 int main(){
-
-  cin >> n;
-  ans =123;
-  ans = ans & n;
-  p(ans)
-
-
+  int v,p,sum=0;
+  cin >> n >> x;
+  rep(i,n){
+    cin >> v >> p;
+    sum += v * p;
+    if (sum > x*100){
+      p(i+1)
+      return 0;
+    }
+  }
+  p(-1)
   return 0;
 }

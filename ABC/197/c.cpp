@@ -39,47 +39,26 @@ string str, str1, str2, str3;
 bool ok = false;
 vector<int> datas(100),datas2(100);
 // rep(i, m) cin >> datas[i];
-
-// (10)->(2)
-int binary(int bina){
-    int ans = 0;
-    for (int i = 0; bina>0 ; i++)
-    {
-        ans = ans+(bina%2)*pow(10,i);
-        bina = bina/2;
-    }
-    return ans;
+int ri() {
+	int n;
+	scanf("%d", &n);
+	return n;
 }
-// (2)->(10)
-int binary2(int bina){
-  int decimal = 0;
-  int base = 1;
-  while(bina>0){
-    decimal = decimal + ( bina % 10 ) * base;
-    bina = bina / 10;
-    base = base * 2;
-  }
-  return decimal;
-}
+int main() {
+	int n = ri();
+	int a[n];
+	for (auto &i : a) i = ri();
 
-int main(){
-
-  cin >> n;
-  rep(i,n) {
-    cin >> datas[i];
-    // datas2[i]=binary(datas[i]);
-  }
-
-
-  rep(i,n){
-    rep(j,i){
-      
-    }
-    rep1(k,i,n){
-
-    }
-  }
-
-
-  return 0;
+	int res = 2000000000;
+	for (int i = 0; i < 1 << (n - 1); i++) {
+		int xored = 0;
+		int ored = 0;
+		for (int j = 0; j <= n; j++) {
+			if (j < n) ored |= a[j];
+			if (j == n || (i >> j & 1)) xored ^= ored, ored = 0;
+		}
+		res = std::min(res, xored);
+	}
+	printf("%d\n", res);
+	return 0;
 }

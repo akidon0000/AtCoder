@@ -1,27 +1,4 @@
-// #include <bits/stdc++.h>
-#include <cassert>
-#include <cctype>
-#include <cmath>
-#include <cstdio>
-#include <cstdlib>
-#include <algorithm>
-#include <bitset>
-#include <deque>
-#include <functional>
-#include <iostream>
-#include <iomanip>
-#include <limits>
-#include <list>
-#include <map>
-#include <numeric>
-#include <queue>
-#include <set>
-#include <sstream>
-#include <stack>
-#include <string>
-#include <tuple>
-#include <utility>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
 #define _GLIBCXX_DEBUG
@@ -43,9 +20,6 @@ vector<int> datas(100);
 int main(){
 
   cin >> n;
-  ans =123;
-  ans = ans & n;
-  p(ans)
 
 
   return 0;
