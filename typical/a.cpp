@@ -1,27 +1,38 @@
-// 001
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-using ll = long long;
-#define _GLIBCXX_DEBUG
-#define rep(i, n) for (ll i = 0; i < (n); ++i)
-#define rep1(i, c, n) for (ll i = c; i < (n); ++i)
-#define yn(ok, True, False) if (ok) { p(True) } else {p(False)};
-//以下debug用
-#define d(x) cout << #x << "; " << x << endl;
-#define p(x) cout << x << endl;
-#define f(x) for (int i = 0; i < x.size(); i++) cout << #x << "[" << i << "]; " << x[i] << endl;
 
-int n, ans = 0, counter = 0, num = 0;
-long long lans = 0, lcounter = 0, lnum = 0;
-string str, str1, str2, str3;
-bool ok = false;
-vector<int> datas(100);
-// rep(i, m) cin >> datas[i];
+long long N, K, L;
+long long A[1 << 18];
 
-int main(){
+bool solve(long long M) {
+    long long cnt = 0, pre = 0;
+    for (int i = 1; i <= N; i++) {
+        if (A[i] - pre >= M && L - A[i] >= M) {
+            cnt += 1;
+            pre = A[i];
+        }
+    }
+    if (cnt >= K) return true;
+    return false;
+}
 
-  cin >> n;
+int main() {
+    // Step #1. 入力
+    cin >> N >> L;
+    cin >> K;
+    for (int i = 1; i <= N; i++) {
+        cin >> A[i];
+    }
 
-
-  return 0;
+    // Step #2. 答えで二分探索（めぐる式二分探索法）
+    // https://qiita.com/drken/items/97e37dd6143e33a64c8c
+    long long left = -1;
+    long long right = L + 1;
+    while (right - left > 1) {
+        long long mid = left + (right - left) / 2;
+        if (solve(mid) == false) right = mid;
+        else left = mid;
+    }
+    cout << left << endl;
+    return 0;
 }
