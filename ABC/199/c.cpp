@@ -8,7 +8,7 @@ using ll = long long;
 //以下debug用
 #define d(x) cout << #x << "; " << x << endl;
 #define p(x) cout << x << endl;
-#define f(x) for (int i = 0; i < x.size(); i++) cout << #x << "[" << i << "]; " << x[i] << endl;
+#define f(x) for (long unsigned int i = 0; i < x.size(); i++) cout << #x << "[" << i << "]; " << x[i] << endl;
 
 int n, ans = 0, counter = 0, num = 0;
 long long lans = 0, lcounter = 0, lnum = 0;
@@ -18,28 +18,46 @@ vector<int> datas(100);
 // rep(i, m) cin >> datas[i];
 
 int main(){
-  int N;
-  cin >> N;
+  int N,Q;
   string S;
+  cin >> N;
   cin >> S;
-  int Q;
   cin >> Q;
 
-  string st,st1;
+  vector<char> a;
+  //文字列出力
+  for (char s:S){
+    a.push_back(s);
+  }
 
+  string st,st1;
+  char ch;
   int T,A,B;
+
+  bool frip = false;
   rep(i,Q){
     cin >> T >> A >> B;
+    A -= 1;
+    B -= 1;
     if (T == 1){
-      st = S.at(A-1);
-      st1 = S.at(B-1);
-      S.replace(A-1,1,st1);
-      S.replace(B-1,1,st);
-    }else if (T == 2){
-      S = S.substr(N) + S.substr(0,N);
+      if (frip){
+        A = (A + N) % (2*N);
+        B = (B + N) % (2*N);
+      }
+      ch = a[A];
+      a[A] = a[B];
+      a[B] = ch;
+    }else{
+      frip = not frip;
     }
   }
-  p(S)
+  string anst="";
+  for (char s: a) anst += s;
+  if (frip){
+    anst = anst.substr(N) + anst.substr(0,N);
+  }
+  p(anst)
+
 
 
   return 0;
