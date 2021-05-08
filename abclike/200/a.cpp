@@ -15,26 +15,21 @@ vector<int> datas;
 const int inf = 1001001001;
 const ll INF = 1LL << 60; //無限大
 
-
 int main(){
-  int N;
-  cin >> N;
-  vector<long long> A(N);
-  for (int i = 0; i < N; i++){
-    cin >> A[i];
-  }
+  string s;
+  cin >> s;
+  int ans=0;
+  while(true){
+    if (s.find("ZONe") != string::npos){
+      s.erase(s.find("ZONe"),4);
+      ans++;
 
-  long long ans = 0;
-  for (int i = 0; i < N; i++){
-    ans += A[i] * A[i] * (N - 1);
-    d(ans)
+    }else{
+      break;
+
+    }
   }
-  long long sum = 0;
-  for (int i = 0; i < N; i++){
-    ans -= sum * A[i] * 2;
-    d(sum)
-    d(ans)
-    sum += A[i];
-  }
-	cout<<ans<<endl;
+  p(ans)
+
+  return 0;
 }

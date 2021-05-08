@@ -15,26 +15,42 @@ vector<int> datas;
 const int inf = 1001001001;
 const ll INF = 1LL << 60; //無限大
 
-
 int main(){
-  int N;
-  cin >> N;
-  vector<long long> A(N);
-  for (int i = 0; i < N; i++){
-    cin >> A[i];
+  string s,T="",q;
+  cin >> s;
+  bool frip = false;
+  for (char a:s){
+    if (a == 'R'){
+      frip = not frip;
+    }else{
+      if (frip){
+        q=a;
+        T.insert(0,q);
+      }else{
+        T.push_back(a);
+      }
+    }
+  }
+  if (frip){
+    reverse(T.begin(), T.end());
   }
 
-  long long ans = 0;
-  for (int i = 0; i < N; i++){
-    ans += A[i] * A[i] * (N - 1);
-    d(ans)
+  char p;
+  string ans="";
+  p='?';
+  for (char b:T){
+    // d(b)
+    // d(ans)
+    if (p == b){
+      ans.pop_back();
+    }else{
+      ans += b;
+    }
+    p = ans[ans.size()-1];
   }
-  long long sum = 0;
-  for (int i = 0; i < N; i++){
-    ans -= sum * A[i] * 2;
-    d(sum)
-    d(ans)
-    sum += A[i];
-  }
-	cout<<ans<<endl;
+  p(ans)
+
+
+
+  return 0;
 }

@@ -15,26 +15,25 @@ vector<int> datas;
 const int inf = 1001001001;
 const ll INF = 1LL << 60; //無限大
 
-
 int main(){
-  int N;
-  cin >> N;
-  vector<long long> A(N);
-  for (int i = 0; i < N; i++){
-    cin >> A[i];
+  double N,D,H;
+  cin >> N >> D >> H;
+  double d,h;
+  double ans,b;
+  ans = 0;
+  rep(i,N){
+    cin >> d >> h;
+    // a = (H-h)/(D-d);
+    b = H - (D * ((H-h)/(D-d)));
+    // d(b)
+    ans = max(ans,b);
   }
+  if (ans < 0){
+    ans = 0.0;
+  }
+  p(ans)
 
-  long long ans = 0;
-  for (int i = 0; i < N; i++){
-    ans += A[i] * A[i] * (N - 1);
-    d(ans)
-  }
-  long long sum = 0;
-  for (int i = 0; i < N; i++){
-    ans -= sum * A[i] * 2;
-    d(sum)
-    d(ans)
-    sum += A[i];
-  }
-	cout<<ans<<endl;
+
+
+  return 0;
 }
