@@ -16,18 +16,11 @@ const int inf = 1001001001;
 const ll INF = 1LL << 60; //無限大
 
 int main(){
-  string s;
-  cin >> s;
-  int ans=0;
-  while(true){
-    if (s.find("ZONe") != string::npos){
-      s.erase(s.find("ZONe"),4);
-      ans++;
-
-    }else{
-      break;
-
-    }
+  int n,ans ;
+  cin >> n;
+  ans = n/100;
+  if (n%100!=0){
+    ans++;
   }
   p(ans)
 

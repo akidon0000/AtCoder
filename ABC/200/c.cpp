@@ -11,46 +11,52 @@ using ll = long long;
 #define f(x) for (long unsigned int i = 0; i < x.size(); i++) cout << #x << "[" << i << "]; " << x[i] << endl;
 
 bool ok = false;
-vector<int> datas;
+// vector<int> datas;
 const int inf = 1001001001;
 const ll INF = 1LL << 60; //無限大
 
-template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true; } return false; }
-template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true; } return false; }
 
-
+vector<int> IntegerToVector(int bit, int N) {
+    vector<int> S;
+    for (int i = 0; i < N; ++i) {
+        if (bit & (1 << i)) {
+            S.push_back(i);
+        }
+    }
+    return S;
+}
 
 int main(){
-  int N;
-  cin >> N;
-  long long dp[N][5] = {0};
+  int n,ans=0,num=0;
+  cin >> n;
+  vector<int> datas(n);
 
-  rep(i,N){
-    rep(j,5){
-      cin >> dp[i][j];
-    }
-  }
+  rep(i,n) cin >> datas[i];
 
+  for (int bit = 0; bit < (1 << n); ++bit) {
+      // どれを選ぶか
+      vector<int> S = IntegerToVector(bit, n);
 
-  // DPループ
-  for (int i = 0; i < N; ++i) {
-    for (int sum_w = 0; sum_w <= 3; ++sum_w) {
-
-      // i 番目の品物を選ぶ場合
-      if (sum_w - weight[i] >= 0) {
-        chmax(dp[i+1][sum_w], dp[i][sum_w - weight[i]] + value[i]);
+      // 部分集合に対応する総和
+      int sum = 0;
+      num = 0;
+      for (int i : S) {
+        sum = abs(sum);
+        sum -= datas[i];
+        num++;
+      }
+      sum = abs(sum);
+      if (num == 2){
+        // d(sum)
+        if (sum % 200 == 0) ans++;
       }
 
-      // i 番目の品物を選ばない場合
-      chmax(dp[i+1][sum_w], dp[i][sum_w]);
-    }
+
   }
-
-
-
   p(ans)
 
 
 
   return 0;
 }
+

@@ -16,39 +16,7 @@ const int inf = 1001001001;
 const ll INF = 1LL << 60; //無限大
 
 int main(){
-  string s,T="",q;
-  cin >> s;
-  bool frip = false;
-  for (char a:s){
-    if (a == 'R'){
-      frip = not frip;
-    }else{
-      if (frip){
-        q=a;
-        T.insert(0,q);
-      }else{
-        T.push_back(a);
-      }
-    }
-  }
-  if (frip){
-    reverse(T.begin(), T.end());
-  }
-
-  char p;
-  string ans="";
-  p='?';
-  for (char b:T){
-    // d(b)
-    // d(ans)
-    if (p == b){
-      ans.pop_back();
-    }else{
-      ans += b;
-    }
-    p = ans[ans.size()-1];
-  }
-  p(ans)
+  
 
 
 

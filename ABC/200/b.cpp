@@ -16,24 +16,17 @@ const int inf = 1001001001;
 const ll INF = 1LL << 60; //無限大
 
 int main(){
-  double N,D,H;
-  cin >> N >> D >> H;
-  double d,h;
-  double ans,b;
-  ans = 0;
-  rep(i,N){
-    cin >> d >> h;
-    // a = (H-h)/(D-d);
-    b = H - (D * ((H-h)/(D-d)));
-    // d(b)
-    ans = max(ans,b);
+
+  ll n,k;
+  cin >> n >> k;
+  rep(i,k){
+    if (n%200 == 0){
+      n = n/200;
+    }else{
+      n = (n*1000) + 200;
+    }
+    // d(n)
   }
-  if (ans < 0){
-    ans = 0.0;
-  }
-  p(ans)
-
-
-
+  p(n)
   return 0;
 }
