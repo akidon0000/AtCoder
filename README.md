@@ -10,7 +10,7 @@ https://qiita.com/akidon0000/items/f5bf68511e594d9be60d
 
 AtCoder ABC 第190回コンテストなら
 sh coppy.sh abc 190
-と入力してください
+と入力
 
 % cd /Users/akidon/program/atcoder/ ; sh coppy.sh abc
 
