@@ -1,3 +1,20 @@
+// 長さ L [cm] のようかんがあります。
+// N 個の切れ目が付けられており、左から i 番目の切れ目は左から A[i] [cm] の位置にあります。
+
+// あなたは、N 個の切れ目のうち K 個を選び、ようかんを K+1 個のピースに分割したいです。そこで、以下の値をスコアとします。
+// ・K+1 個のピースのうち、最も短いものの長さ
+// スコアが最大になるように分割する場合に得られるスコアを求めよ。
+
+// 【制約】
+// ・1 ≦ K ≦ N ≦ 10^5
+// ・0 < A[1] < A[2] < ... < L ≦ 10^9
+// ・入力はすべて整数
+
+// 【入力形式】
+// ../sample/001.txt 参照
+
+// https://github.com/E869120/kyopro_educational_90/blob/main/editorial/001.jpg
+
 #include <iostream>
 using namespace std;
 
@@ -28,6 +45,7 @@ int main() {
     // https://qiita.com/drken/items/97e37dd6143e33a64c8c
     long long left = -1;
     long long right = L + 1;
+
     while (right - left > 1) {
         long long mid = left + (right - left) / 2;
         if (solve(mid) == false) right = mid;
