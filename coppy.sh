@@ -47,3 +47,4 @@ else
   mv ${contestNumber} ${contestLevel}
   echo "完了しました"
 fi
+ 
