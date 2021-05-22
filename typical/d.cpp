@@ -18,8 +18,18 @@ vector<int> datas(100);
 // rep(i, m) cin >> datas[i];
 
 int main(){
+  int H,W;
+  cin >> H >> W;
+  int box[H][W];
+  for(int i = 0; i < H; i++){
+      for(int k = 0; k < W; k++){
+      cin >> box[i][k];
+      }
+  }
 
-  cin >> n;
+  rep(i,H){
+    
+  }
 
 
   return 0;
