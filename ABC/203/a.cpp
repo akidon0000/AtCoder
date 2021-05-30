@@ -20,9 +20,24 @@ string s;
 int main(){
   int a,b,c;
   cin >> a >> b >> c;
-  ans = 7*3 - (a+b+c);
-  p(ans)
+  if (a == b && b == c && c == a){
+    p(a)
+    return 0;
+  }
+  if (a != b && b != c && c != a){
+    p(0)
+    return 0;
+  }
 
+  if (a == b){
+    p(c)
+  }
+  if (b == c){
+    p(a)
+  }
+  if (a == c){
+    p(b)
+  }
 
   return 0;
 }

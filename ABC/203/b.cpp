@@ -14,15 +14,22 @@ vector<int> datas;
 const int inf = 1001001001;
 const ll INF = 1LL << 60; //無限大
 
-int ans=0,num=0,counter=0;
+ll ans=0,num=0,counter=0;
 string s;
 
 int main(){
-  int a,b,c;
-  cin >> a >> b >> c;
-  ans = 7*3 - (a+b+c);
+  int N,K;
+  ll a=0,b=0;
+  cin >> N >> K;
+  rep(i,N){
+    rep(j,K){
+      a += i+1;
+      b += j+1;
+    }
+  }
+  a = a * 100;
+  ans = a+b;
   p(ans)
-
 
   return 0;
 }

@@ -23,9 +23,9 @@ int main(){
   for(int i=1; i<=k; i++){
     a = (a*10 + 7) % k;
     if(a)continue;
-    cout << i << endl;
+    p(i);
     return 0;
   }
-  cout << -1 << endl;
+  p(-1);
 }
 
