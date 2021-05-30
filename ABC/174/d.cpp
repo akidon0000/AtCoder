@@ -1,26 +1,32 @@
 #include <bits/stdc++.h>
+#define rep(i,n) for (int i = 0; i < (n); ++i)
 using namespace std;
 using ll = long long;
-#define _GLIBCXX_DEBUG
-#define rep(i, n) for (ll i = 0; i < (n); ++i)
-#define rep1(i, c, n) for (ll i = c; i < (n); ++i)
-#define yn(ok, True, False) if (ok) { p(True) } else {p(False)};
-//以下debug用
+using P = pair<int,int>;
 #define d(x) cout << #x << "; " << x << endl;
 #define p(x) cout << x << endl;
-#define f(x) for (int i = 0; i < x.size(); i++) cout << #x << "[" << i << "]; " << x[i] << endl;
+#define f(x) for (long unsigned int i = 0; i < x.size(); i++) cout << #x << "[" << i << "]; " << x[i] << endl;
 
-int n, ans = 0, counter = 0, num = 0;
-long long lans = 0, lcounter = 0, lnum = 0;
-string str, str1, str2, str3;
-bool ok = false;
-vector<int> datas(100);
-// rep(i, m) cin >> datas[i];
-
-int main(){
-
-  cin >> n;
-
-
+int main() {
+  int n;
+  string s;
+  cin >> n >> s;
+  int a = 0, b = 0;
+  // Rの個数
+  rep(i,n) {
+    if (s[i] == 'R') ++a;
+  }
+  // int ans = max(a,b);
+  int ans = a;
+  // d(ans)
+  rep(i,n) {
+    if (s[i] == 'R') --a;
+    else ++b;
+    int now = max(a,b);
+    ans = min(ans, now);
+    // d(now)
+    // d(ans)
+  }
+  cout << ans << endl;
   return 0;
 }
