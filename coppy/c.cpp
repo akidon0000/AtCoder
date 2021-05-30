@@ -10,11 +10,12 @@ using ll = long long;
 #define f(x) for (long unsigned int i = 0; i < x.size(); i++) cout << #x << "[" << i << "]; " << x[i] << endl;
 
 bool ok = false;
-vector<int> datas;
+vector<ll> v;
+vector<pair<ll,ll>> p;
 const int inf = 1001001001;
 const ll INF = 1LL << 60; //無限大
 
-int ans=0,num=0,counter=0;
+ll ans=0,num=0,counter=0;
 string s;
 
 int main(){
