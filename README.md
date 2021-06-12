@@ -1,4 +1,5 @@
 # 競技プログラミングAtCoder
+intelで使用する場合はscript.shの「alias g++='g++-10'」をリマーク
 
 # チートシート
 https://qiita.com/akidon0000/items/019c1a6bcb494f0252ea
