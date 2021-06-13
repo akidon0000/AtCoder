@@ -1,39 +1,32 @@
-#include <bits/stdc++.h>
-// #include <iostream>
-// #include <vector>
-// using namespace std;
-// using Graph = vector<vector<int>>;
+#include <iostream>
+#include <vector>
+using namespace std;
 
-// // 深さ優先探索
-// vector<bool> seen;
-// void dfs(const Graph &G, int v) {
-//     seen[v] = true; // v を訪問済にする
-
-//     // v から行ける各頂点 next_v について
-//     for (auto next_v : G[v]) {
-//         if (seen[next_v]) continue; // next_v が探索済だったらスルー
-//         dfs(G, next_v); // 再帰的に探索
-//     }
-// }
+template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return 1; } return 0; }
+template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return 1; } return 0; }
 
 int main() {
-  printf("aaa");
-    // // 頂点数と辺数、s と t
-    // int N, M, s, t; cin >> N >> M >> s >> t;
 
-    // // グラフ入力受取
-    // Graph G(N);
-    // for (int i = 0; i < M; ++i) {
-    //     int a, b;
-    //     cin >> a >> b;
-    //     G[a].push_back(b);
-    // }
+  // Step1
+  const long long INF = 1LL << 60;
+  long long dp[100010];
+  for (int i = 0; i < 100010; ++i) dp[i] = INF;
 
-    // // 頂点 s をスタートとした探索
-    // seen.assign(N, false); // 全頂点を「未訪問」に初期化
-    // dfs(G, s);
+  // Step2
+  dp[0] = 0;
 
-    // // t に辿り着けるかどうか
-    // if (seen[t]) cout << "Yes" << endl;
-    // else cout << "No" << endl;
+  // 入力
+  int N;
+  long long h[100010];
+  cin >> N;
+  for (int i = 0; i < N; ++i) cin >> h[i];
+
+  // Step3
+  for (int i = 0; i < N; ++i) {
+    chmin(dp[i], dp[i - 1] + abs(h[i] - h[i - 1]));
+    if (i > 1) chmin(dp[i], dp[i - 2] + abs(h[i] - h[i - 2]));
+  }
+
+  // Step4
+  cout << dp[N-1] << endl;
 }
