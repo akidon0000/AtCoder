@@ -1,42 +1,32 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
-using ll = long long int;
-using ld = long double;
-using pll = pair<ll, ll>;
-using vvp = vector<pair<ll, ll>>;
-using vl = vector<ll>;
-using vvl = vector<vector<ll>>;
-using vs = vector<string>;
-using vvs = vector<vector<string>>;
 
-#define _GLIBCXX_DEBUG
-#define rep(i, n) for (ll i = 0; i < (n); ++i)
-#define rep1(i, c, n) for (ll i = c; i < (n); ++i)
-#define pb push_back
-#define fi first
-#define se second
-#define so(v) sort((v).begin(), (v).end())
-#define rso(v) sort((v).rbegin(), (v).rend())
-#define siz(x) ll((x).size())
-#define pow2(x) (1ll << (x)) //2のn乗
-//debug用
-#define p(x) cout << x << endl;
-#define d(x) cout << #x << "; " << x << endl;
-#define f(x) for (long unsigned int i = 0; i < x.size(); i++) cout << #x << "[" << i << "]; " << x[i] << endl;
-#define yn(x) if (x) p("Yes") else p("No")
-//DP用
 template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return 1; } return 0; }
 template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return 1; } return 0; }
 
-const ll INF = 1LL << 60; //無限大
+int main() {
 
+  // Step1
+  const long long INF = 1LL << 60;
+  long long dp[100010];
+  for (int i = 0; i < 100010; ++i) dp[i] = INF;
 
-bool ok = false;
-ll ans=0,num=0,counter=0;
-string str;
+  // Step2
+  dp[0] = 0;
 
-int main(){
-  
+  // 入力
+  int N;
+  long long h[100010];
+  cin >> N;
+  for (int i = 0; i < N; ++i) cin >> h[i];
 
-  return 0;
+  // Step3
+  for (int i = 0; i < N; ++i) {
+    chmin(dp[i], dp[i - 1] + abs(h[i] - h[i - 1]));
+    if (i > 1) chmin(dp[i], dp[i - 2] + abs(h[i] - h[i - 2]));
+  }
+
+  // Step4
+  cout << dp[N-1] << endl;
 }
