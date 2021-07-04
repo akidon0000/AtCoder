@@ -218,87 +218,211 @@ H行W列のマス目があります。このマス目の、上からi番目、�
 #190
 https://atcoder.jp/contests/abc190
 
+#B
 
+#C
+
+#D
 
 #189
 https://atcoder.jp/contests/abc189
+
+#B
+
+#C
+
+#D
 
 
 
 #188
 https://atcoder.jp/contests/abc188
 
+#B
+
+#C
+
+#D
+
 
 
 #187
 https://atcoder.jp/contests/abc187
+
+#B
+
+#C
+
+#D
 
 
 
 #186
 https://atcoder.jp/contests/abc186
 
+#B
+
+#C
+
+#D
+
 
 
 #185
 https://atcoder.jp/contests/abc185
+
+#B
+
+#C
+
+#D
 
 
 
 #184
 https://atcoder.jp/contests/abc184
 
+#B
+
+#C
+
+#D
+
 
 
 #183
 https://atcoder.jp/contests/abc183
+
+#B
+
+#C
+
+#D
 
 
 
 #182
 https://atcoder.jp/contests/abc182
 
+#B
+
+#C
+
+#D
+
 
 
 #181
 https://atcoder.jp/contests/abc181
+
+#B
+
+#C
+
+#D
 
 
 
 #180
 https://atcoder.jp/contests/abc180
 
+#B
+
+#C
+
+#D
+
 
 
 #179
 https://atcoder.jp/contests/abc179
+
+#B
+
+#C
+
+#D
 
 
 
 #178
 https://atcoder.jp/contests/abc178
 
+#B
+
+#C
+
+#D
+
 
 
 #177
 https://atcoder.jp/contests/abc177
+
+#B
+
+#C
+
+#D
 
 
 
 #176
 https://atcoder.jp/contests/abc176
 
+#B
+
+#C
+
+#D
+
 
 
 #175
 https://atcoder.jp/contests/abc175
+
+#B
+
+#C
+
+#D
 
 
 
 #174
 https://atcoder.jp/contests/abc174
 
+#B
+
 #C
 高橋君はKの倍数と7が好きです。7,77,777,…という数列の中に初めてKの倍数が登場するのは何項目ですか？
 存在しない場合は代わりに -1 を出力してください。
 
+#D
+
+#127
+https://atcoder.jp/contests/abc127
+
+#B
+
+#C
+
+#D
+
+#126
+https://atcoder.jp/contests/abc126
+
+#B
+長さ 44 の数字列 SS が与えられます。あなたは、この数字列が以下のフォーマットのどちらであるか気になっています。
+•	YYMM フォーマット: 西暦年の下 22 桁と、月を 22 桁で表したもの (例えば 11 月なら 01) をこの順に並べたもの
+•	MMYY フォーマット: 月を 22 桁で表したもの (例えば 11 月なら 01) と、西暦年の下 22 桁をこの順に並べたもの
+与えられた数字列のフォーマットとして考えられるものが YYMM フォーマットのみである場合 YYMM を、 MMYY フォーマットのみである場合 MMYY を、 YYMM フォーマット と MMYY フォーマットのどちらの可能性もある場合 AMBIGUOUS を、 どちらの可能性もない場合 NA を出力してください。
+
+#C
+すぬけ君は 11 〜 NN の整数が等確率で出る NN 面サイコロと表と裏が等確率で出るコインを持っています。すぬけ君は、このサイコロとコインを使って今から次のようなゲームをします。
+1.	まず、サイコロを 11 回振り、出た目を現在の得点とする。
+2.	得点が 11 以上 K−1K−1 以下である限り、すぬけ君はコインを振り続ける。表が出たら得点は 22 倍になり、裏が出たら得点は 00 になる。
+3.	得点が 00 になった、もしくは KK 以上になった時点でゲームが終了する。このとき、得点が KK 以上である場合すぬけ君の勝ち、 00 である場合すぬけ君の負けである。
+NN と KK が与えられるので、このゲームですぬけ君が勝つ確率を求めてください。
+
+#D

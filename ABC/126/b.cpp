@@ -15,10 +15,10 @@ using vvs = vector<vector<string>>;
 #define pb push_back
 #define fi first
 #define se second
-#define so(v) sort((v).begin(), (v).end())
-#define rso(v) sort((v).rbegin(), (v).rend())
-#define siz(x) ll((x).size())
-#define pow2(x) (1ll << (x)) //2のn乗
+#define so(v) sort((v).begin(), (v).end());
+#define rso(v) sort((v).rbegin(), (v).rend());
+#define siz(x) ll((x).size());
+#define pow2(x) (1ll << (x)); //2のn乗
 //debug用
 #define p(x) cout << x << endl;
 #define d(x) cout << #x << "; " << x << endl;
@@ -32,15 +32,31 @@ const ll INF = 1LL << 60; //無限大
 
 
 bool ok = false;
-ll ans=0,num=0,counter=0;
-string str;
+int ans=0,num=0,num1,num2,counter=0;
+string str,str1,str2;
 
 int main(){
-  ll n,m;
-  cin >> n >> m;
-  vl a(n);
-  rep(i,n) cin >> a[i];
 
+  cin >> str;             // AABB
+  str1 = str.substr(0,2); // AA
+  str2 = str.substr(2,2); // BB
+  num1 = stoi(str1);
+  num2 = stoi(str2);
+
+  if (1 <= num1 && num1 <= 12){
+    if (1 <= num2 && num2 <= 12){
+      p("AMBIGUOUS")
+      return 0;
+    }
+    p("MMYY")
+    return 0;
+  }
+  if (1 <= num2 && num2 <= 12){
+    p("YYMM")
+    return 0;
+  }
+  p("NA")
+  // d(num)
 
 
 

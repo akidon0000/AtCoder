@@ -15,10 +15,10 @@ using vvs = vector<vector<string>>;
 #define pb push_back
 #define fi first
 #define se second
-#define so(v) sort((v).begin(), (v).end())
-#define rso(v) sort((v).rbegin(), (v).rend())
-#define siz(x) ll((x).size())
-#define pow2(x) (1ll << (x)) //2のn乗
+#define so(v) sort((v).begin(), (v).end());
+#define rso(v) sort((v).rbegin(), (v).rend());
+#define siz(x) ll((x).size());
+#define pow2(x) (1ll << (x)); //2のn乗
 //debug用
 #define p(x) cout << x << endl;
 #define d(x) cout << #x << "; " << x << endl;
@@ -32,15 +32,33 @@ const ll INF = 1LL << 60; //無限大
 
 
 bool ok = false;
-ll ans=0,num=0,counter=0;
+// ll ans=0,num=0,counter=0;
 string str;
 
 int main(){
-  ll n,m;
-  cin >> n >> m;
-  vl a(n);
-  rep(i,n) cin >> a[i];
+  ll N,K;
+  cin >> N >> K;
+  vl a(N);
+  vvp pa(N);
 
+  rep(i,N){
+    cin >> pa[i].first;
+    pa[i].second = i;
+  }
+  so(pa)
+
+  // ld counter = K/N; // 全員の個数
+  // d(counter)
+  // p(10000000000000/7)
+  // ll num = K%N; // あまり
+
+  rep(i,N) a[i] = K/N;
+  // f(a)
+
+  rep(i,K%N) {
+    a[pa[i].second]++;
+  }
+  for (ll i: a) cout << i << endl;
 
 
 

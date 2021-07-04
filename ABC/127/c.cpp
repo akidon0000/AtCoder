@@ -15,10 +15,10 @@ using vvs = vector<vector<string>>;
 #define pb push_back
 #define fi first
 #define se second
-#define so(v) sort((v).begin(), (v).end())
-#define rso(v) sort((v).rbegin(), (v).rend())
-#define siz(x) ll((x).size())
-#define pow2(x) (1ll << (x)) //2のn乗
+#define so(v) sort((v).begin(), (v).end());
+#define rso(v) sort((v).rbegin(), (v).rend());
+#define siz(x) ll((x).size());
+#define pow2(x) (1ll << (x)); //2のn乗
 //debug用
 #define p(x) cout << x << endl;
 #define d(x) cout << #x << "; " << x << endl;
@@ -32,16 +32,25 @@ const ll INF = 1LL << 60; //無限大
 
 
 bool ok = false;
-ll ans=0,num=0,counter=0;
+int ans=0,num=0,counter=0;
 string str;
 
 int main(){
-  ll n,m;
+  int n , m;
   cin >> n >> m;
-  vl a(n);
-  rep(i,n) cin >> a[i];
 
+  vl a(m),b(m);
 
+  rep(i,m){
+    cin >> a[i] >> b[i];
+  }
+  rso(a)
+  so(b)
+  ans = b[0] - a[0] + 1;
+  if (ans < 0){
+    ans = 0;
+  }
+  p(ans)
 
 
 

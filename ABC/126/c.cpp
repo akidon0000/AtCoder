@@ -15,10 +15,10 @@ using vvs = vector<vector<string>>;
 #define pb push_back
 #define fi first
 #define se second
-#define so(v) sort((v).begin(), (v).end())
-#define rso(v) sort((v).rbegin(), (v).rend())
-#define siz(x) ll((x).size())
-#define pow2(x) (1ll << (x)) //2のn乗
+#define so(v) sort((v).begin(), (v).end());
+#define rso(v) sort((v).rbegin(), (v).rend());
+#define siz(x) ll((x).size());
+#define pow2(x) (1ll << (x)); //2のn乗
 //debug用
 #define p(x) cout << x << endl;
 #define d(x) cout << #x << "; " << x << endl;
@@ -35,14 +35,35 @@ bool ok = false;
 ll ans=0,num=0,counter=0;
 string str;
 
+ll facctorialMethod(int k){ //階乗の計算
+    long long sum=1;
+    for (int i = 1; i <= k; ++i) sum *= i;
+    return sum;
+}
+
+long double a=0,b=0,c=0;
+
+
 int main(){
-  ll n,m;
-  cin >> n >> m;
-  vl a(n);
-  rep(i,n) cin >> a[i];
+  int n,k;
+  cin >> n >> k;
 
+  rep(i,n){
+    num = i+1; // サイコロの出目
+    counter = 0;
 
-
+    while(true){
+      if(num >= k){
+        break;
+      }
+      num *= 2;
+      counter++;
+    }
+    
+    a = 1/(n * pow(2,counter));
+    b += a;
+  }
+  cout << fixed << setprecision(12) << b << endl;
 
 
   return 0;
