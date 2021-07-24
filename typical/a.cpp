@@ -15,42 +15,66 @@
 
 // https://github.com/E869120/kyopro_educational_90/blob/main/editorial/001.jpg
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
+using ll = long long int;
+using ld = long double;
 
-long long N, K, L;
-long long A[1 << 18];
+#define _GLIBCXX_DEBUG
+#define rep(i, n) for (ll i = 0; i < (n); ++i)
+#define rep1(i, c, n) for (ll i = c; i < (n); ++i)
+#define so(v) sort((v).begin(), (v).end());
+#define rso(v) sort((v).rbegin(), (v).rend());
 
-bool solve(long long M) {
-    long long cnt = 0, pre = 0;
-    for (int i = 1; i <= N; i++) {
-        if (A[i] - pre >= M && L - A[i] >= M) {
-            cnt += 1;
-            pre = A[i];
-        }
+//p(出力) d(デバッグ) f(一次配列用のデバッグ) f2(二次配列用のデバッグ)
+#define p(x) cout << x << endl;
+#define d(x) cout << #x << "; " << x << endl;
+#define f(x) for (long unsigned int i = 0; i < x.size(); i++) cout << #x << "[" << i << "]; " << x[i] << endl;
+#define f2(x) for (long unsigned int i = 0; i < x.size(); i++) for (long unsigned int j = 0; j < x[i].size(); j++) cout << #x << "[" << i << "][" << j << "]; " << x[i][j] << endl;
+
+const ll INF = 1LL << 60;  //無限大
+const ll mod = 1000000007; //10^9 + 7
+
+// めぐる式二分探索法
+
+ll N,L,K;
+vector<ll> lists(N);
+
+bool solve(ll mid) {
+    ll count = 0, beforeLists = 0;
+
+    rep1(i,1,N) {
+      if (lists[i] - beforeLists >= mid && L - lists[i] >= mid) {
+        count++;
+        beforeLists = lists[i];
+      }
     }
-    if (cnt >= K) return true;
-    return false;
+
+    if (count >= K){
+      return true;
+    }else{
+      return false;
+    }
 }
 
-int main() {
-    // Step #1. 入力
-    cin >> N >> L;
-    cin >> K;
-    for (int i = 1; i <= N; i++) {
-        cin >> A[i];
-    }
+int main(){
+  cin >> N >> L >> K;
+  rep(i,N) cin >> lists[i];
 
-    // Step #2. 答えで二分探索（めぐる式二分探索法）
-    // https://qiita.com/drken/items/97e37dd6143e33a64c8c
-    long long left = -1;
-    long long right = L + 1;
+  ll left = -1;
+  ll right = L + 1;
 
-    while (right - left > 1) {
-        long long mid = left + (right - left) / 2;
-        if (solve(mid) == false) right = mid;
-        else left = mid;
+  while (right - left > 1) {
+    ll mid = left + (right - left) / 2; // 真ん中を取得 値切り上げ
+
+    if (solve(mid)){
+      left = mid;
+    }else{
+      right = mid;
     }
-    cout << left << endl;
-    return 0;
+  }
+
+  p(left);
+
+  return 0;
 }
