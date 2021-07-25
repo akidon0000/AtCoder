@@ -38,7 +38,7 @@ const ll mod = 1000000007; //10^9 + 7
 // めぐる式二分探索法
 
 ll N,L,K;
-vector<ll> lists(N);
+ll lists[1 << 18];
 
 bool solve(ll mid) {
     ll count = 0, beforeLists = 0;
@@ -58,7 +58,8 @@ bool solve(ll mid) {
 }
 
 int main(){
-  cin >> N >> L >> K;
+  cin >> N >> L;
+  cin >> K;
   rep(i,N) cin >> lists[i];
 
   ll left = -1;
