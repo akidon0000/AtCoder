@@ -19,18 +19,13 @@ const ll INF = 1LL << 60;  //無限大
 const ll mod = 1000000007; //10^9 + 7
 
 int main(){
-
-  vector<int> A = {1,2,3,5};
-  next_permutation(A.begin(), A.end());
-  p(A)
-
-  // string str;
-  // cin >> str;
-  // if (str == "Hello,World!"){
-  //   p("AC")
-  // }else{
-  //   p("WA")
-  // }
+  string str;
+  cin >> str;
+  if (str == "Hello,World!"){
+    p("AC")
+  }else{
+    p("WA")
+  }
 
   return 0;
 }

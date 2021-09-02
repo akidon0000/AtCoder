@@ -2,6 +2,9 @@
 using namespace std;
 using ll = long long int;
 using ld = long double;
+using vl = vector<ll>;
+using vc = vector<char>;
+using vs = vector<string>;
 
 #define _GLIBCXX_DEBUG
 #define rep(i, n) for (ll i = 0; i < (n); ++i)
