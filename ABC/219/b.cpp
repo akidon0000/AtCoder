@@ -23,21 +23,20 @@ const ll INF = 1LL << 60;  //無限大
 const ll mod = 1000000007; //10^9 + 7
 
 int main(){
-  int n;
-  string s;
-  cin >> n >> s;
-  int counter = 0;
-  for (char c : s){
-    counter++;
-    // d(counter);
-    if (counter == n){
-      if (c == 'o'){
-        p("Yes");
-      }else{
-        p("No");
-      }
+  string s1,s2,s3,ans="",T;
+  cin >> s1 >> s2 >> s3;
+  cin >> T;
+  for (char c : T){
+    if (c == '1'){
+      ans += s1;
+    }else if (c == '2'){
+      ans += s2;
+    }else{
+      ans += s3;
     }
   }
+  p(ans);
+
 
   return 0;
 }

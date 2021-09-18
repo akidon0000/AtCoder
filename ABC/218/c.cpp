@@ -23,6 +23,116 @@ const ll INF = 1LL << 60;  //無限大
 const ll mod = 1000000007; //10^9 + 7
 
 int main(){
+  int N;
+  vector<string> field, ansField, rotateField, testField;
+
+  // 入力受け取り
+  cin >> N;
+
+  field.resize(N + 1);
+  ansField.resize(N + 1);
+  rotateField.resize(N + 1);
+  testField.resize(N + 1);
+
+  for (int n = 0; n < N; ++n) cin >> field[n];
+  for (int n = 0; n < N; ++n) cin >> ansField[n];
+
+
+  // 0度の時
+
+  rotateField = field;
+  // 横にスライド
+  rep(_,N){
+    rep(h,N){
+      rep(w,N){
+        // 端っこ
+        if (w+1 == N){
+          w = -1;
+        }
+        testField[h][w+1] = rotateField[h][w];
+      }
+    }
+
+    if (testField == ansField){
+      p("Yes");
+      return 0;
+    }
+    rotateField = testField;
+  }
+
+
+
+  // 180度の時
+
+  rotateField = field;
+  // 横にスライド
+  rep(_,N){
+    rep(h,N){
+      rep(w,N){
+        // 端っこ
+        if (w+1 == N){
+          w = -1;
+        }
+        testField[h][w+1] = rotateField[h][w];
+      }
+    }
+
+    if (testField == ansField){
+      p("Yes");
+      return 0;
+    }
+    rotateField = testField;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // 4回
+  rep(l,4){
+    // 90度繰り返し
+    rep(i,N){
+      rep(j,N){
+        testField[j][N-1-i] = field[i][j];
+        // d(field[i][j]);
+      }
+    }
+    // この時点で正解か判定
+    if (testField == ansField){
+      p("Yes");
+      return 0;
+    }
+
+    // n回 横にスライド
+    rep(q,N){
+      rep(h,N){
+        rep(w,N){
+          // 端っこ
+          if (w+1 == N){
+            w = -1;
+          }
+          testField[h][w+1] = field[h][w];
+
+        }
+      }
+
+      if (testField == ansField){
+        p("Yes");
+        return 0;
+      }
+      field = testField;
+    }
+  }
+
+  p("No");
 
   return 0;
 }

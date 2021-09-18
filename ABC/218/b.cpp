@@ -23,6 +23,13 @@ const ll INF = 1LL << 60;  //無限大
 const ll mod = 1000000007; //10^9 + 7
 
 int main(){
+  int num;
+  string str = "";
+  rep(i,26){
+    cin >> num;
+    str += char(96+num);
+  }
+  p(str);
 
   return 0;
 }
