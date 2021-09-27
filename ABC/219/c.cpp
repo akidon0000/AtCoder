@@ -19,8 +19,8 @@ using vs = vector<string>;
 #define f(x) for (long unsigned int i = 0; i < x.size(); i++) cout << #x << "[" << i << "]; " << x[i] << endl
 #define f2(x) for (long unsigned int i = 0; i < x.size(); i++) for (long unsigned int j = 0; j < x[i].size(); j++) cout << #x << "[" << i << "][" << j << "]; " << x[i][j] << endl
 
-const ll INF = 1LL << 60;  //無限大
-const ll mod = 1000000007; //10^9 + 7
+const ll INF = 1LL << 60;  // 無限大
+const ll mod = 1000000007; // 10^9 + 7
 
 int main(){
   string x;
@@ -35,9 +35,6 @@ int main(){
   int counter = 0;
   for (char c:x){
     mp1[c] = counter;
-    // d(counter);
-    // d(c);
-    // d(mp1[c]);
     mp2[counter] = c;
     counter ++;
   }
