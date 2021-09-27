@@ -21,9 +21,9 @@ questionNumber="$1"
 if [ $# -eq 2 ];then
   echo "---------------エラー内容---------------"
   # コンパイル -Waall(警告を全て表示) -std=c++14(C++14の機能を使いたい時)
-  g++ -Wall -std=c++14 ./${questionNumber}.cpp #-g -o #-D_GLIBCXX_DEBUG
+  g++ -Wall -std=c++14 ./${questionNumber}.cpp
   echo "---------------入力内容-----------------"
-  ./a.out #-D_GLIBCXX_DEBUG
+  ./a.out
   echo "----------------------------------------"
   rm -f a.out
   exit
