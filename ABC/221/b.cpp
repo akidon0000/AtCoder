@@ -21,6 +21,7 @@ template<typename T> inline void dbgn(string n, vector<vector<T>>& m) { cerr << 
 #define so(v) sort((v).begin(), (v).end())
 #define rso(v) sort((v).rbegin(), (v).rend())
 #define len(x) ll((x).size())
+
 //p(出力) d(デバッグ *多次元配列も可能*)
 #define p(x) cout << x << endl;
 #define d(x) dbgn(#x, x);
@@ -29,10 +30,30 @@ const ll INF = 1LL << 60;  //無限大
 const ll MOD = 1000000007; //10^9 + 7
 
 int main(){
-  ifstream in("./testData.txt");
-  cin.rdbuf(in.rdbuf());
-  
-  int a;
-  cin >> a;
-  p(a)
+  string s,t;
+  cin >> s >> t;
+
+  int counter = 0;
+  rep(i,len(s)){
+    if (s[i] != t[i]){
+      if (i == len(s)-1){
+        p("No")
+        return 0;
+      }
+      if (s[i] == t[i+1] && s[i+1] == t[i]){
+        counter++;
+        i++;
+      }else{
+        p("No")
+        return 0;
+      }
+    }
+  }
+
+  if (counter <= 1){
+    p("Yes")
+  }else{
+    p("No")
+  }
+  return 0;
 }
