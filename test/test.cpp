@@ -28,11 +28,69 @@ template<typename T> inline void dbgn(string n, vector<vector<T>>& m) { cerr << 
 const ll INF = 1LL << 60;  //無限大
 const ll MOD = 1000000007; //10^9 + 7
 
-int main(){
+// 四方向への移動ベクトル
+const int dy[4] = {1, 0, 0, -1};
+const int dx[4] = {0, 1, -1, 0};
+
+int h, w;
+
+string c[510];
+bool used[510][510][510];
+
+int sy, sx, gy, gx;
+
+int main(void){
+  // testData入力
   ifstream in("./testData.txt");
   cin.rdbuf(in.rdbuf());
-  
-  int a;
-  cin >> a;
-  p(a)
+
+  cin >> h >> w;
+  rep(i, h) cin >> c[i];
+
+  // スタートとゴールの位置を特定
+  rep(i, h)rep(j, w){
+      if(c[i][j] == 'S'){
+          sy = i; sx = j;
+      }
+      if(c[i][j] == 'G'){
+          gy = i; gx = j;
+      }
+  }
+
+  rep(i, 510)rep(j, 510)rep(k, 510)used[i][j][k]= false; // 初期化
+
+    queue<tuple<int, int, int> > q;
+    q.push(make_tuple(sy, sx, 0));
+    used[sy][sx][0] = true;
+
+    while(!q.empty()){
+        int y, x, t;
+        tie(y, x, t) = q.front(); q.pop();
+
+        if(y == gy && x == gx) break;//ゴール
+        rep(i, 4){ // 4回以上は必要ない（回り込む場合を考えたら）
+            int ny = y + dy[i], nx = x + dx[i];
+            if(!(0 <= ny && ny < h && 0 <= nx && nx < w)) continue;
+            if(used[ny][nx][t]) continue;//すでに調べている
+            if(c[ny][nx] == '#'){
+                used[ny][nx][t + 1] = true;
+                q.push(make_tuple(ny, nx, t + 1));
+            }else{
+                used[ny][nx][t] = true;
+                q.push(make_tuple(ny, nx, t));
+            }
+        }
+    }
+
+    rep(i, 510){
+        if(used[gy][gx][i]){
+          ll ans = (h*w) - ((h-1) * (w-1)) - 1;
+          ll num = 0;
+          rep(j,i) num += j;
+
+          p(ans + num)
+          return 0;
+        }
+    }
+    return 0;
 }

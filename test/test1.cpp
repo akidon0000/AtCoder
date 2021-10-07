@@ -125,3 +125,102 @@ int main(){
 
   p(ans)
 }
+
+#4 レベルnデス
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long int;
+using ld = long double;
+
+template<typename T> using v = vector<T>;
+template<typename T> using vv = vector<vector<T>>;
+template<typename T> using vvv = vector<vector<vector<T>>>;
+template<typename T> inline void errv(T& v) { for (auto x: v) cerr << x << " "; cerr << endl; }
+inline void errv(vector<bool>& v) { for (auto x: v) cerr << (x ? 1 : 0) << " "; cerr << endl; }
+template<typename T> inline void dbgn(string n, T x) { cerr << n << ": " << x << endl; }
+template<typename T> inline void dbgn(string n, vector<T>& v) { cerr << n << ": "; errv(v); }
+template<typename T> inline void dbgn(string n, vector<vector<T>>& m) { cerr << n << ":" << endl; for (auto& v: m) errv(v); }
+
+#define _GLIBCXX_DEBUG
+#define rep(i, n) for (ll i = 0; i < (n); ++i)
+#define repp(i, c, n) for (ll i = c; i < (n); ++i)
+#define repa(i, a) for (auto i: a)
+#define all(a) (a).begin(),(a).end()
+#define rall(a) (a).rbegin(),(a).rend()
+#define so(v) sort((v).begin(), (v).end())
+#define rso(v) sort((v).rbegin(), (v).rend())
+#define len(x) ll((x).size())
+//p(出力) d(デバッグ *多次元配列も可能*)
+#define p(x) cout << x << endl;
+#define d(x) dbgn(#x, x);
+
+const ll INF = 1LL << 60;  //無限大
+const ll MOD = 1000000007; //10^9 + 7
+
+// a と b の最大公約数を返す
+long long GCD(long long a, long long b) {
+    if (b == 0) return a;
+    else return GCD(b, a % b);
+}
+//最小公倍数は最大公約数を用いて求めることができる。
+long long LCM(long long a, long long b) {
+    return a / GCD(a, b) * b;
+}
+
+vector<ll> IntegerToVector(int bit, int N) {
+    vector<ll> S;
+    for (ll i = 0; i < N; ++i) {
+        if (bit & (1 << i)) { // ビットフラグの判定 AND演算 互いに1のbitを1とする (11111111 & 10101010 は、10101010) true=1
+            S.push_back(i);
+        }
+    }
+    return S;
+}
+
+
+int main(){
+  // testData入力
+  ifstream in("./testData.txt");
+  cin.rdbuf(in.rdbuf());
+
+  ll l,r,m;
+  cin >> l >> r >> m;
+  ll levelRange = r-l+1;
+
+  v<ll> magicLevels(m);
+
+  rep(i,m) {
+    cin >> magicLevels[i];
+    // 1が含まれると全滅できるため
+    if (magicLevels[i] == 1){
+      p(0)
+      return 0;
+    }
+  }
+
+  d(magicLevels)
+
+
+  ll defeatedMonstersNum = 0;
+  rep(i,len(magicLevels)){
+    defeatedMonstersNum += ll(r/magicLevels[i]) - ll(l/magicLevels[i]);
+  }
+
+  for (int bit = 0; bit < (1 << len(magicLevels)); ++bit) {
+    ll lcmNum = 1;
+    // bit全探索
+    vector<ll> S = IntegerToVector(bit, len(magicLevels)); // 1回目S={0} 2回目S={1} 3回目S={0,1} 4回目S={2}....
+    if (len(S) == 0 || len(S) == 1) continue;
+
+    for (int i : S){
+      lcmNum = LCM(magicLevels[i], lcmNum);
+    }
+    d(lcmNum)
+    d(ll(r/lcmNum) - ll(l/lcmNum))
+    defeatedMonstersNum -= ll(r/lcmNum) - ll(l/lcmNum);
+
+  }
+  d(defeatedMonstersNum)
+  p(levelRange - defeatedMonstersNum)
+}
+
