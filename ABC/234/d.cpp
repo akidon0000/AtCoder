@@ -29,29 +29,35 @@ template<typename T> inline void dbgn(string n, vector<vector<T>>& m) { cerr << 
 const ll INF = 1LL << 60;  //無限大
 const ll MOD = 1000000007; //10^9 + 7
 
-// 1000程度とする
-vector<int> lists(1000);
+int main() {
+  ll n, k;
+  cin >> n >> k;
+  
+  ll p[500000];
+  for (ll i = 0; i < n; i++) {
+    cin >> p[i];
+  }
+  // i = k;
+  vector<ll> tmp;
+  for (ll i = 0; i < k; i++) {
+    tmp.push_back(p[i]);
+  }
+  sort(tmp.begin(), tmp.end(), std::greater<int>());
+  ll ret = tmp.at(k - 1);
+  std::cout << ret << std::endl;
 
-void push(int y) {
+  // k + 1 to n
+  for (ll i = k; i < n; i++) {
+    if (ret > p[i]) {
+      std::cout << ret << std::endl;
+      tmp.push_back(p[i]);
+    } else {
+      tmp.push_back(p[i]);
+      sort(tmp.begin(), tmp.end(), std::greater<int>());
+      ret = tmp.at(k - 1);
+      std::cout << ret << std::endl;
+    }
+  }
 
-  lists.push_back(y);
-}
-
-int pop() {
-  int ans = lists[0];
-  lists.pop_back();
-  return ans;
-}
-
-int main(){
-  push(1);
-  push(2);
-  push(3);
-  p(pop())
-  p(pop())
-  p(pop())
   return 0;
 }
-
-
-

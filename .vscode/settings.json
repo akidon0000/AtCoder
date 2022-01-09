@@ -2,6 +2,8 @@
   "files.associations": {
     "ostream": "cpp",
     "iostream": "cpp",
-    "typeinfo": "cpp"
+    "typeinfo": "cpp",
+    "cmath": "cpp",
+    "bitset": "cpp"
   }
 }

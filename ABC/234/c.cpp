@@ -29,29 +29,20 @@ template<typename T> inline void dbgn(string n, vector<vector<T>>& m) { cerr << 
 const ll INF = 1LL << 60;  //無限大
 const ll MOD = 1000000007; //10^9 + 7
 
-// 1000程度とする
-vector<int> lists(1000);
 
-void push(int y) {
+int main() {
+    long k;
+    cin >> k;
 
-  lists.push_back(y);
+    string ans = "";
+
+    while (0 < k) {
+        if (k % 2 == 0) {
+            ans = "0" + ans;
+        } else {
+            ans = "2" + ans;
+        }
+        k = k / 2;
+    }
+    p(ans) ;
 }
-
-int pop() {
-  int ans = lists[0];
-  lists.pop_back();
-  return ans;
-}
-
-int main(){
-  push(1);
-  push(2);
-  push(3);
-  p(pop())
-  p(pop())
-  p(pop())
-  return 0;
-}
-
-
-
