@@ -2,6 +2,7 @@
 using namespace std;
 using ll = long long int;
 using ld = long double;
+using vl = vector<ll>;
 
 template<typename T> using v = vector<T>;
 template<typename T> using vv = vector<vector<T>>;
@@ -30,6 +31,37 @@ const ll INF = 1LL << 60;  //無限大
 const ll MOD = 1000000007; //10^9 + 7
 
 int main(){
+  ll n,m;
+  cin >> n >> m;
+  vector<string> a;
+  map<string, int> mp{};
+
+  rep(i,n){
+    string s;
+    cin >> s;
+    a.push_back(s);
+    mp[s] = 0;
+  }
+
+  rep(i,m){
+    string s;
+    cin >> s;
+    mp[s] = 1;
+    d(mp[s])
+  }
+
+  rep(i,n){
+    if ( auto iter = mp.find(a[i]); iter != end(mp) ) {
+      if (iter->second == 1){
+        p("Yes")
+      } else {
+        p("No")
+      }
+    }else {
+        std::cout << "not exists" << std::endl;
+    }
+
+  }
 
   return 0;
 }

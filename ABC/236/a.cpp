@@ -30,6 +30,14 @@ const ll INF = 1LL << 60;  //無限大
 const ll MOD = 1000000007; //10^9 + 7
 
 int main(){
+  string s;cin >> s;
+  int a,b;
+  cin >> a >> b;
+  char aa;
+  aa = s[a-1];
+  s[a-1] = s[b-1];
+  s[b-1] = aa;
+  p(s)
 
   return 0;
 }

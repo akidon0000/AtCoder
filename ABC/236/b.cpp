@@ -2,6 +2,7 @@
 using namespace std;
 using ll = long long int;
 using ld = long double;
+using vl = vector<ll>;
 
 template<typename T> using v = vector<T>;
 template<typename T> using vv = vector<vector<T>>;
@@ -30,6 +31,35 @@ const ll INF = 1LL << 60;  //無限大
 const ll MOD = 1000000007; //10^9 + 7
 
 int main(){
-
+  int N;
+  cin>>N;
+  int A[4*N-1];
+  unsigned long long sum =0;
+  for(int i=0;i<4*N-1;i++)
+  {
+    cin>>A[i];
+    sum+=A[i];
+  }
+  cout<<2*1ull*N*(N+1)-sum<<endl;
   return 0;
+  // ll n; cin >> n;
+
+  // ll sum = 0, cinSum = 0;
+
+  // ll N = n*4-1;
+
+  // ll tmp;
+
+  // rep(i,N) {
+  //   cin >> tmp;
+  //   cinSum += tmp;
+  // }
+
+  // rep(i,n+1) {
+  //   sum += i*4;
+  // }
+
+  // p(sum - cinSum)
+
+  // return 0;
 }
