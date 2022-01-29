@@ -50,6 +50,7 @@ using mls = map<ll,string>;
 #define so(v) sort((v).begin(), (v).end());
 #define rso(v) sort((v).rbegin(), (v).rend());
 #define len(x) ll((x).size())
+#define to_int(x) stoi(x)
 
 #define rep(i, ...) _sel2(__VA_ARGS__, _reps, _repn)(i, __VA_ARGS__)
 #define rrep(i, ...) _sel2(__VA_ARGS__, _rreps, _rrepn)(i, __VA_ARGS__)
