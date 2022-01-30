@@ -13,7 +13,7 @@ AtCoder ABC 第190回コンテストなら
 sh coppy.sh abc 190
 と入力
 
-% cd /Users/akidon/program/atcoder/ ; sh coppy.sh abc
+% cd /Users/akidon/program/atcoder/ ; sh coppy.sh abc 237 ; cd abc/237
 
 # 実行
 
