@@ -62,6 +62,15 @@ const ll INF = 1LL << 60;  //無限大
 const ll MOD = 1000000007; //10^9 + 7
 
 int main(){
+  ll n; cin >> n;
+  d(1<<31)
+  d(-pow(2,31))
+
+  if (-pow(2,31) <= n && n < pow(2,31)){
+    p("Yes")
+  }else{
+    p("No")
+  }
 
   return 0;
 }

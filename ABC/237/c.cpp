@@ -62,6 +62,52 @@ const ll INF = 1LL << 60;  //無限大
 const ll MOD = 1000000007; //10^9 + 7
 
 int main(){
+  string s; cin >> s;
+  ll startCounter = 0;
+  ll endCounter = 0;
+  ll startBool = true;
+  ll endBool = true;
 
+  rep(i,len(s)){
+    if (s[i] == 'a' && startBool){
+      startCounter++;
+    }else{
+      startBool = false;
+    }
+
+    if (s[len(s)-i-1] == 'a' && endBool){
+      endCounter++;
+    }else{
+      endBool = false;
+    }
+  }
+
+
+  d(startCounter)
+  d(endCounter)
+
+  if (startCounter == len(s)){
+    p("Yes")
+    return 0;
+  }
+  if (startCounter > endCounter){
+    p("No")
+    return 0;
+  }
+
+  s = s.erase(len(s)-endCounter);
+  s = s.substr(startCounter);
+
+
+  rep(i,len(s)/2){
+
+    if (s[i] != s[len(s)-1-i]){
+      p("No")
+      return 0;
+    }
+
+  }
+
+  p("Yes")
   return 0;
 }

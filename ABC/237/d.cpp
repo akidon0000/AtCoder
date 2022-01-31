@@ -62,6 +62,52 @@ const ll INF = 1LL << 60;  //無限大
 const ll MOD = 1000000007; //10^9 + 7
 
 int main(){
+  ll n;
+  string s;
+
+  cin >> n >> s;
+
+  vpll pair(n + 1, {-1, -1});
+
+  rep(i, n) {
+    if (s[i] == 'L') {
+      if (pair[i].first == -1) {
+        pair[i].first = i + 1;
+        pair[i + 1].second = i;
+      } else {
+        pair[pair[i].first].second = i + 1;
+        pair[i + 1].first = pair[i].first;
+        pair[i].first = i + 1;
+        pair[i + 1].second = i;
+      }
+    } else {
+      if (pair[i].second == -1) {
+        pair[i].second = i + 1;
+        pair[i + 1].first = i;
+      } else {
+        pair[pair[i].second].first = i + 1;
+        pair[i + 1].second = pair[i].second;
+        pair[i].second = i + 1;
+        pair[i + 1].first = i;
+      }
+    }
+  }
+
+  ll cur = 0;
+  rep(i, n + 1) {
+    if (pair[i].first == -1) {
+      cur = i;
+      break;
+      }
+  }
+
+  while (true) {
+    cout << cur << " ";
+    cur = pair[cur].second;
+    if (cur == -1) {
+      break;
+    }
+  }
 
   return 0;
 }

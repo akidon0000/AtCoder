@@ -62,6 +62,21 @@ const ll INF = 1LL << 60;  //無限大
 const ll MOD = 1000000007; //10^9 + 7
 
 int main(){
+  ll h,w; cin >> h >> w;
+  vvl lists(h);
+
+  rep(i,h){
+    rep(j,w){
+      ll tmp; cin >> tmp;
+      lists[i].push_back(tmp);
+    }
+  }
+  rep(i,w){
+    rep(j,h){
+      cout << lists[j][i] << " ";
+    }
+    cout << endl;
+  }
 
   return 0;
 }
