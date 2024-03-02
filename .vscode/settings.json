@@ -4,6 +4,8 @@
     "iostream": "cpp",
     "typeinfo": "cpp",
     "cmath": "cpp",
-    "bitset": "cpp"
-  }
+    "bitset": "cpp",
+    "vector": "cpp",
+    "iosfwd": "cpp"
+}
 }

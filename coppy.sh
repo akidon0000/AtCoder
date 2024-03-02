@@ -1,49 +1,39 @@
 # !/bin/sh
-# 第一引数 コンテストレベル
-# 第二引数 コンテスト番号
-# cd /Users/akidon/program/atcoder
-# sh coppy.sh abc 191
+# 第一引数 問題番号
+#  sh script.sh a
 
-# 現在のパスを取得  "/Users/akidon/program/atcoder/"
-path=$(cd $(dirname $0); pwd)
+# intelで使用する場合はscript.shの「alias g++='g++-10'」をリマーク
+# alias g++='g++-10'
 
+# 問題番号 引数
+questionNumber="$1"
 
-if [ ! $# -eq 2 ];then
-  echo """
-  -------ERROR-------
-  コンテストレベルもしくは番号が正しく入力されていません
-  AtCoder ABC 第190回コンテストなら
-  sh coppy.sh abc 190
-  と入力してください
-  """
-  exit
-fi
+contestURL="https://atcoder.jp/contests/abc342/tasks/abc342"
 
-# コンテストレベル
-contestLevel="$1"
+# AtCoderのURL
+URL="${contestURL}_${questionNumber}"
 
-# コンテスト番号
-contestNumber="$2"
+# サンプルデータダウンロード
+oj login "${URL}"
+oj dl "${URL}"
 
 
-# コピー 上書き時警告表示
-# cp -r -i coppy ${contestNumber}
-if [ -e ${path}"/"${contestLevel}"/"${contestNumber} ];then
-  echo """
-  -------WARNING-------
-  同じ名前のファイルが以下のパスで見つかりました
-  """
-  echo ${path}"/"${contestLevel}"/"${contestNumber}
-  read -p "上書きしますか？ (y/N): " yn
-  case "$yn" in
-    [yY]*) rm -rf ${path}"/"${contestLevel}"/"${contestNumber}
-              cp -r coppy ${contestNumber}
-              mv ${contestNumber} ${contestLevel}
-              echo "完了しました";;
-    *) echo "キャンセルしました";;
-  esac
-else
-  cp -r -i coppy ${contestNumber}
-  mv ${contestNumber} ${contestLevel}
-  echo "完了しました"
-fi
+echo ""
+echo "---------------情報----------------------"
+
+echo "URL : "${URL}
+echo ""
+
+echo "---------------エラー内容---------------"
+# コンパイル
+g++ -Wall -std=c++14 ./${questionNumber}.cpp
+
+echo "----------------------------------------"
+echo ""
+
+# サンプルテスト
+oj test
+
+# 新しくできたファイルを削除
+rm -f a.out
+rm -rf test
